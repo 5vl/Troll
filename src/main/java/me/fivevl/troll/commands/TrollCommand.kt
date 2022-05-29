@@ -24,7 +24,7 @@ class TrollCommand : CommandExecutor {
             p.sendMessage(Utils.color("<red>Player not found!</red>"))
             return true
         }
-        p.openInventory(TrollGui.getGui(target))
+        p.openInventory(TrollGui.getGui(target, p))
         return true
     }
 }

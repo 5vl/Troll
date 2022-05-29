@@ -8,9 +8,11 @@ import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.ItemStack
 
 object TrollGui {
-    fun getGui(target: Player): Inventory {
+    val inTrollGui = HashMap<Player, Player>()
+    fun getGui(target: Player, from: Player): Inventory {
         val gui = Bukkit.createInventory(null, 54, Utils.color("<color:#ff9e36>Troll Menu - ${target.name}</color>"))
         gui.setItem(0, getYeetItem())
+        inTrollGui[from] = target
         return gui
     }
 
