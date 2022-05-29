@@ -4,3 +4,6 @@ main: me.fivevl.troll.Main
 api-version: 1.18
 authors: [ 5vl ]
 description: This is a cool troll plugin!
+commands:
+  troll:
+    description: Troll a player!
