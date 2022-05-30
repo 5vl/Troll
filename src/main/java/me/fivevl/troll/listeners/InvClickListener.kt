@@ -21,6 +21,7 @@ class InvClickListener : Listener {
                 3 -> Trolls.spin(p, ps)
                 4 -> Trolls.ignite(p, ps)
                 5 -> Trolls.scare(p, ps)
+                6 -> Trolls.explode(p, ps)
             }
             TrollGui.inTrollGui.remove(p)
             p.closeInventory()

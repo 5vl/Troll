@@ -44,4 +44,9 @@ object Trolls {
         ps.playSound(ps.location, Sound.ENTITY_CREEPER_PRIMED, 1.0f, 1.0f)
         p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been scared!</color>"))
     }
+
+    fun explode(p: Player, ps: Player) {
+        ps.location.createExplosion(1.0f, false, false)
+        p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been exploded!</color>"))
+    }
 }

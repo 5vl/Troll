@@ -17,6 +17,7 @@ object TrollGui {
         gui.setItem(3, getSpinItem())
         gui.setItem(4, getIgniteItem())
         gui.setItem(5, getScareItem())
+        gui.setItem(6, getExplodeItem())
         inTrollGui[from] = target
         return gui
     }
@@ -71,6 +72,15 @@ object TrollGui {
         val meta = item.itemMeta
         meta.displayName(Utils.color("<color:#35ff0d>Scare</color>"))
         meta.lore(Utils.loreBuilder("Scare the player by playing", "a creeper ignition sound."))
+        item.itemMeta = meta
+        return item
+    }
+
+    private fun getExplodeItem(): ItemStack {
+        val item = ItemStack(Material.TNT)
+        val meta = item.itemMeta
+        meta.displayName(Utils.color("<color:#780600>Explode</color>"))
+        meta.lore(Utils.loreBuilder("This will explode the player.", "Will do damage but won't break blocks!"))
         item.itemMeta = meta
         return item
     }
