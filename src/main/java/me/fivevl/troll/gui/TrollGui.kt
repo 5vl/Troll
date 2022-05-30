@@ -14,6 +14,7 @@ object TrollGui {
         gui.setItem(0, getYeetItem())
         gui.setItem(1, getPigBombItem())
         gui.setItem(2, getFakeOpItem())
+        gui.setItem(3, getSpinItem())
         inTrollGui[from] = target
         return gui
     }
@@ -41,6 +42,15 @@ object TrollGui {
         val meta = item.itemMeta
         meta.displayName(Utils.color("<color:#ff462e>Fake Op</color>"))
         meta.lore(Utils.loreBuilder("This will fake op the player."))
+        item.itemMeta = meta
+        return item
+    }
+
+    private fun getSpinItem(): ItemStack {
+        val item = ItemStack(Material.SPRUCE_BOAT)
+        val meta = item.itemMeta
+        meta.displayName(Utils.color("<color:#e8ff52>Spin</color>"))
+        meta.lore(Utils.loreBuilder("This will spin the player 180°."))
         item.itemMeta = meta
         return item
     }

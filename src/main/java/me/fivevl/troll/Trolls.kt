@@ -5,7 +5,7 @@ import org.bukkit.entity.Player
 import kotlin.random.Random
 
 object Trolls {
-    fun yeetPlayer(p: Player, ps: Player) {
+    fun yeet(p: Player, ps: Player) {
         val loc = ps.location
         loc.yaw = Random.nextInt(360).toFloat()
         loc.pitch = Random.nextInt(-50, -20).toFloat()
@@ -25,5 +25,12 @@ object Trolls {
     fun fakeOp(p: Player, ps: Player) {
         ps.sendMessage(Utils.color("<i><gray>[Server: Made ${ps.name} a server operator]</gray></i>"))
         p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been fake opped!</color>"))
+    }
+
+    fun spin(p: Player, ps: Player) {
+        val loc = ps.location
+        loc.yaw = loc.yaw + 180.0f
+        ps.teleport(loc)
+        p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been spun!</color>"))
     }
 }

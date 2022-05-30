@@ -15,9 +15,10 @@ class InvClickListener : Listener {
             e.isCancelled = true
             val ps = TrollGui.inTrollGui[p]!!
             when (e.rawSlot) {
-                0 -> Trolls.yeetPlayer(p, ps)
+                0 -> Trolls.yeet(p, ps)
                 1 -> Trolls.pigBomb(p, ps)
                 2 -> Trolls.fakeOp(p, ps)
+                3 -> Trolls.spin(p, ps)
             }
             TrollGui.inTrollGui.remove(p)
             p.closeInventory()
