@@ -6,7 +6,7 @@
 
     <groupId>me.fivevl</groupId>
     <artifactId>troll</artifactId>
-    <version>1</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>Troll</name>

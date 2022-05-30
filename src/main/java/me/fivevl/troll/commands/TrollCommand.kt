@@ -15,6 +15,10 @@ class TrollCommand : CommandExecutor {
             return true
         }
         val p = sender.player!!
+        if (!p.hasPermission("troll.use")) {
+            p.sendMessage(Utils.color("<red>You don't have permission to use this command!</red>"))
+            return true
+        }
         if (args == null || args.size != 1) {
             p.sendMessage(Utils.color("<red>Usage: /troll <player></red>"))
             return true
