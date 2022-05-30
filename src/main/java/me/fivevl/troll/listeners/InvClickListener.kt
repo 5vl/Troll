@@ -15,13 +15,17 @@ class InvClickListener : Listener {
             e.isCancelled = true
             val ps = TrollGui.inTrollGui[p]!!
             if (e.rawSlot == 0) {
-                val loc = ps.location
-                loc.yaw = Random.nextInt(360).toFloat()
-                loc.pitch = Random.nextInt(-50, -20).toFloat()
-                ps.velocity = loc.direction.multiply(3)
-                TrollGui.inTrollGui.remove(p)
-                p.closeInventory()
+                yeetPlayer(p, ps)
             }
         }
+    }
+
+    private fun yeetPlayer(p: Player, ps: Player) {
+        val loc = ps.location
+        loc.yaw = Random.nextInt(360).toFloat()
+        loc.pitch = Random.nextInt(-50, -20).toFloat()
+        ps.velocity = loc.direction.multiply(3)
+        TrollGui.inTrollGui.remove(p)
+        p.closeInventory()
     }
 }

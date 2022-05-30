@@ -12,6 +12,7 @@ object TrollGui {
     fun getGui(target: Player, from: Player): Inventory {
         val gui = Bukkit.createInventory(null, 54, Utils.color("<color:#ff9e36>Troll Menu - ${target.name}</color>"))
         gui.setItem(0, getYeetItem())
+        gui.setItem(1, getPigBombItem())
         inTrollGui[from] = target
         return gui
     }
@@ -21,6 +22,15 @@ object TrollGui {
         val meta = item.itemMeta
         meta.displayName(Utils.color("<color:#ffd6cf>Yeet</color>"))
         meta.lore(Utils.loreBuilder("This will yeet the player", "in a random direction."))
+        item.itemMeta = meta
+        return item
+    }
+
+    private fun getPigBombItem(): ItemStack {
+        val item = ItemStack(Material.PIG_SPAWN_EGG)
+        val meta = item.itemMeta
+        meta.displayName(Utils.color("<color:#f563ff>Pig Bomb</color>"))
+        meta.lore(Utils.loreBuilder("This will throw a pig bomb", "on the player."))
         item.itemMeta = meta
         return item
     }
