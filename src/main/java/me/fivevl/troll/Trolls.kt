@@ -1,5 +1,6 @@
 package me.fivevl.troll
 
+import org.bukkit.Sound
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Player
 import kotlin.random.Random
@@ -37,5 +38,10 @@ object Trolls {
     fun ignite(p: Player, ps: Player) {
         ps.fireTicks = 200
         p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been ignited!</color>"))
+    }
+
+    fun scare(p: Player, ps: Player) {
+        ps.playSound(ps.location, Sound.ENTITY_CREEPER_PRIMED, 1.0f, 1.0f)
+        p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been scared!</color>"))
     }
 }

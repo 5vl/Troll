@@ -16,6 +16,7 @@ object TrollGui {
         gui.setItem(2, getFakeOpItem())
         gui.setItem(3, getSpinItem())
         gui.setItem(4, getIgniteItem())
+        gui.setItem(5, getScareItem())
         inTrollGui[from] = target
         return gui
     }
@@ -61,6 +62,15 @@ object TrollGui {
         val meta = item.itemMeta
         meta.displayName(Utils.color("<color:#ff8000>Ignite</color>"))
         meta.lore(Utils.loreBuilder("This will ignite the player", "for 10 seconds."))
+        item.itemMeta = meta
+        return item
+    }
+
+    private fun getScareItem(): ItemStack {
+        val item = ItemStack(Material.CREEPER_HEAD)
+        val meta = item.itemMeta
+        meta.displayName(Utils.color("<color:#35ff0d>Scare</color>"))
+        meta.lore(Utils.loreBuilder("Scare the player by playing", "a creeper ignition sound."))
         item.itemMeta = meta
         return item
     }
