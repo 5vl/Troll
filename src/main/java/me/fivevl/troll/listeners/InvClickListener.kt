@@ -19,6 +19,7 @@ class InvClickListener : Listener {
                 1 -> Trolls.pigBomb(p, ps)
                 2 -> Trolls.fakeOp(p, ps)
                 3 -> Trolls.spin(p, ps)
+                4 -> Trolls.ignite(p, ps)
             }
             TrollGui.inTrollGui.remove(p)
             p.closeInventory()

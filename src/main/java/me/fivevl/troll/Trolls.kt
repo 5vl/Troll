@@ -33,4 +33,9 @@ object Trolls {
         ps.teleport(loc)
         p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been spun!</color>"))
     }
+
+    fun ignite(p: Player, ps: Player) {
+        ps.fireTicks = 200
+        p.sendMessage(Utils.color("<color:#4747ff>${ps.name} has been ignited!</color>"))
+    }
 }

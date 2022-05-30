@@ -15,6 +15,7 @@ object TrollGui {
         gui.setItem(1, getPigBombItem())
         gui.setItem(2, getFakeOpItem())
         gui.setItem(3, getSpinItem())
+        gui.setItem(4, getIgniteItem())
         inTrollGui[from] = target
         return gui
     }
@@ -54,4 +55,23 @@ object TrollGui {
         item.itemMeta = meta
         return item
     }
+
+    private fun getIgniteItem(): ItemStack {
+        val item = ItemStack(Material.FLINT_AND_STEEL)
+        val meta = item.itemMeta
+        meta.displayName(Utils.color("<color:#ff8000>Ignite</color>"))
+        meta.lore(Utils.loreBuilder("This will ignite the player", "for 10 seconds."))
+        item.itemMeta = meta
+        return item
+    }
+
+    /* ITEM DEFAULT SETUP
+    private fun item(): ItemStack {
+        val item = ItemStack(Material.)
+        val meta = item.itemMeta
+        meta.displayName(Utils.color(""))
+        meta.lore(Utils.loreBuilder(""))
+        item.itemMeta = meta
+        return item
+    }*/
 }
