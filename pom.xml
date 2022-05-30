@@ -44,7 +44,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>kotlin</pattern>
-                                    <shadedPattern>${groupId}.${artifactId}.kotlin</shadedPattern>
+                                    <shadedPattern>${project.groupId}.${project.artifactId}.kotlin</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
