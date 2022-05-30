@@ -1,5 +1,6 @@
 package me.fivevl.troll.listeners
 
+import me.fivevl.troll.Utils
 import me.fivevl.troll.gui.TrollGui
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Player
@@ -17,6 +18,7 @@ class InvClickListener : Listener {
             val ps = TrollGui.inTrollGui[p]!!
             if (e.rawSlot == 0) yeetPlayer(p, ps)
             if (e.rawSlot == 1) pigBomb(p, ps)
+            if (e.rawSlot == 2) fakeOp(p, ps)
         }
     }
 
@@ -35,6 +37,12 @@ class InvClickListener : Listener {
         for (i in 0..10) {
             loc.world.spawnEntity(loc, EntityType.PIG)
         }
+        TrollGui.inTrollGui.remove(p)
+        p.closeInventory()
+    }
+
+    private fun fakeOp(p: Player, ps: Player) {
+        ps.sendMessage(Utils.color("<i><gray>[Server: Made ${ps.name} a server operator]</gray></i>"))
         TrollGui.inTrollGui.remove(p)
         p.closeInventory()
     }
