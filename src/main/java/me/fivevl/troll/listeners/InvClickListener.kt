@@ -5,6 +5,7 @@ import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.inventory.InventoryClickEvent
+import kotlin.random.Random
 
 class InvClickListener : Listener {
     @EventHandler
@@ -14,7 +15,10 @@ class InvClickListener : Listener {
             e.isCancelled = true
             val ps = TrollGui.inTrollGui[p]!!
             if (e.rawSlot == 0) {
-                ps.velocity = ps.location.toVector().multiply(6)
+                val loc = ps.location
+                loc.yaw = Random.nextInt(360).toFloat()
+                loc.pitch = Random.nextInt(-50, -20).toFloat()
+                ps.velocity = loc.direction.multiply(3)
                 TrollGui.inTrollGui.remove(p)
                 p.closeInventory()
             }
